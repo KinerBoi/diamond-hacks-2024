@@ -9,24 +9,25 @@ public class Coordinates {
     }
 
     Origin origin = new Origin(latitude,longitude);
-   
-   
-   double currentLatitude = origin.originalLatitude;
-   double currentLongitude = origin.originalLongitude;
-   
+      
     public double latitude (double angleBetweenPolarisAndHorizon) {
         //angle between polaris and the horizon is the latitude latitude
-        currentLatitude = angleBetweenPolarisAndHorizon;
-        return currentLatitude;
+        this.latitude = angleBetweenPolarisAndHorizon;
+        return this.latitude;
     } 
 
-    public double longitude(double primeMeridianTime, double localTime) {
-        /*longitude is calculated by the differce in time between the Prime meridian 
-        and 360/24 (traveling around 15 degrees of longitude per hour)
-        */
-        currentLongitude = (primeMeridianTime - localTime) * 15;
-        return origin.originalLatitude - currentLatitude;
+    public double calculateLongitude(double primeMeridianTime, double localTime) {
+        // Longitude is calculated by the difference in time between the Prime Meridian
+        // and traveling around 15 degrees of longitude per hour
+        this.longitude = (primeMeridianTime - localTime) * 15;
+        return this.longitude;
     }
 
-    Coordinates currentCoordinates = new Coordinates(currentLatitude, currentLongitude);
+
+    public void updateToNewCoordinates(double latitude, double longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+
 }

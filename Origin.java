@@ -9,4 +9,12 @@ public class Origin {
 
     }
 
+    public double getOriginalLatitude() {
+        return originalLatitude;
+    }
+
+    public double getOriginalLongitude() {
+        return originalLongitude;
+    }
+
 }
