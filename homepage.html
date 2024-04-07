@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Lost at Sea? Find your Coordinates and get Back to Shore!</title>
         <link href="homepage.css" rel="stylesheet" type="text/css">
     </head>
-    
     <body>
         background-image: url("paper.gif");
         background-color: #cccccc;
@@ -31,10 +32,19 @@
 
            <img src="https://nineplanets.org/wp-content/uploads/2020/07/SouthernCross.jpg" alt="Using Angle Measurements to Find Latitude">
 
-           Find the angle, and input it in here!
 
+           <h2>Find the angle if in Northern Hemisphere, and input it in here!</h2>
+           <input type="number" id="angle" placeholder="Enter angle found!">
+           <button onclick="latitudeInNorthernHemisphere()">Enter</button>
+           <div id="result"></div>
+           <script src="Coordinates.js"></script>
 
-
+           <h2>Find the angle if in Southern Hemisphere, and input it in here!</h2>
+           <input type="number" id="angle" placeholder="Enter angle found!">
+           <button onclick="latitudeInSouthernHemisphere()">Enter</button>
+           <div id="result"></div>
+           <script src="Coordinates.js"></script>
+       
            P.S - The latitude is essentially the same as the angle! This is because both the North Star and the Southern Cross are almost right in line with
            the North and South Pole! As such when getting the angle, it tells your latitude. Just that when youre in the Southern Hemispehre, 
            the angle is notated as negative. 
@@ -52,7 +62,23 @@
 
             If the Sun has set, record the time it takes after the sun set before it rises to know what time you are currently at in the night.
 
-            Based on this, put the two times here: The time of where you are at right now, and the current time of where you first departed.
+            
+           <h2>Based on this, put the two times here: The time of where you are at right now, and the current time of where you first departed!</h2>
+           <input type="number" id="timeAtCurrentPlace" placeholder="timeAtCurrentPlace">
+           <input type="number" id="timeAtPlaceOfDeparture" placeholder="timeAtPlaceOfDeparture">
+           <input type="number" id="longitudeAtPlaceOfDeparture" placeholder="longitudeAtPlaceOfDeparture">
+           <button onclick="calculateLongitude()">Enter</button>
+           <div id="result"></div>
+           <script src="Coordinates.js"></script>
+
+           P.S - The longitude is calculated by the time shift between the current time and the time at where one was originaly
+           (as times shift as one goes away from a place due to time zones). This difference is multiplied by 15 degrees, because it 
+           takes the earth 24 hours to rotate 360 degrees, making the earth go around 15 degrees longitude in 1 hr. Through these calculations,
+           One can find the longitude
+        </p>
+        <p>
+            And now you know where you are on Mother Earth! From here, you can find how close you are to land, and chart your way hopefully to help!
+            We wish you the best of luck in finding shore before supplies run out sailor. Best of luck seaman.
         </p>
     </body>
 </html>
