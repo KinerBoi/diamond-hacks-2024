@@ -10,11 +10,18 @@ public class Coordinates {
 
     Origin origin = new Origin(latitude,longitude);
       
-    public double latitude (double angleBetweenPolarisAndHorizon) {
+    public double latitudeInNorthernHemisphere (double angleBetweenPolarisAndHorizon) {
         //angle between polaris and the horizon is the latitude latitude
         this.latitude = angleBetweenPolarisAndHorizon;
         return this.latitude;
     } 
+
+    public double latitudeInSouthernHemisphere (double angleBetweenSothernCrossAndHorizon) {
+        //angle between polaris and the horizon is the latitude latitude
+        this.latitude = angleBetweenSothernCrossAndHorizon;
+        return this.latitude;
+    }
+
 
     public double calculateLongitude(double primeMeridianTime, double localTime) {
         // Longitude is calculated by the difference in time between the Prime Meridian
